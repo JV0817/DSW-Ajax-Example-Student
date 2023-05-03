@@ -3,7 +3,11 @@ from flask import render_template
 
 app = Flask(__name__)
 
-app.debug = True #Change this to False for production
+app.debug = False #Change this to False for production
+
+@app.route('/updText')
+def updText():
+    return Markup("This is the updated text from the server.")
 
 @app.route('/')
 def home():
