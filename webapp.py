@@ -9,6 +9,13 @@ app.debug = False #Change this to False for production
 def updText():
     return Markup("<p>"+"This is the updated text from the server."+"</p>")
 
+@app.route('/updText2', methods=['POST'])
+def updText2():
+   if request.form["key"] == 'Hello':
+    return "Goodbye"
+   else:
+    return request.form["key"]
+
 @app.route('/')
 def home():
     return render_template('home.html')
