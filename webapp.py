@@ -7,7 +7,7 @@ app.debug = False #Change this to False for production
 
 @app.route('/updText')
 def updText():
-    return Markup('This is the updated text from the server.')
+    return Markup("<p>"+"This is the updated text from the server."+"</p>")
 
 @app.route('/')
 def home():
